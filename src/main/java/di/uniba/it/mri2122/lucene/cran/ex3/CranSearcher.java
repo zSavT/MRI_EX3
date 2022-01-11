@@ -76,7 +76,18 @@ public class CranSearcher {
                 .replace("shallow","shallow^0.3").replace("existing","existing^0.2").replace("deflection","deflection^0.2").replace("work", "work^0.3").replace("representative","representative^0.2").replace("absence", "absence^0.2").replace("theoretical","theoretical^0.2").replace("kinetic", "kinetic^0.2")
                 .replace("data","data^0.2").replace("solve","solve^0.3").replace("elliptic", "elliptic^0.2").replace("equation","equation^0.2").replace("deformation", "deformation^0.2").replace("rarefaction", "rarefaction^0.3").replace("characteristic", "characteristic^0.2").replace("tail", "tail^0.2").replace("phenomena","phenomena^0.3").replace("vortex", "vortex^0.2")
                 .replace("small", "small^0.2").replace("oppose", "oppose^0.2").replace("nature", "nature^0.1").replace("discontinuity", "discontinuity^0.4").replace("single", "single^0.1").replace("fundamental", "fundamental^0.1").replace("times", "times^0.1").replace("classical", "classical^0.2").replace("collapse","collapse^0.3").replace("subject", "subject^0.2").replace("principle","principle^0.2")
-                .replace("guide", "guide^0.1").replace("obey", "obey^0.1").replace("input", "input^0.1").replace("exist", "exist^0.2").replace("integrate", "integrate^0.2"); // remove special chars
+                .replace("guide", "guide^0.1").replace("obey", "obey^0.1").replace("input", "input^0.1").replace("exist", "exist^0.2").replace("integrate", "integrate^0.2").replace("influence", "influence^0.3").replace("simulation", "simulation^0.3")
+                .replace("physical", "physical^0.4").replace("internal", "internal^0.6")
+                .replace("magnitude", "magnitude^0.3").replace("dealing", "dealing^0.2")
+                .replace("factor", "factor^0.2").replace("gradient", "gradient^0.3")
+                .replace("procedure", "procedure^0.5").replace("reasonable", "reasonable^0.5")
+                .replace("computation", "computation^0.3").replace("generate", "generate^0.2")
+                .replace("flexible", "flexible^0.2").replace("stabilize", "stabilize^0.1")
+                .replace("modify", "modify^0.1").replace("environment", "environment^0.2")
+                .replace("result", "result^0.2").replace("establish", "establish^0.2").replace("accurate", "accurate^0.3")
+                .replace("progress", "progress^0.2").replace("freedom", "freedom^0.2").replace("analyse", "analyse^0.2")
+                .replace("core", "core^0.2").replace("rational", "rational^0.2").replace("swept", "swept^0.7")
+                .replace("beam", "beam^0.2").replace("inelastic", "inelastic^0.2").replace("reduce", "reduce^0.2");// remove special chars
 
     }
 
