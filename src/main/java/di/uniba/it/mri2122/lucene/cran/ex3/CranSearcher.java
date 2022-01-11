@@ -13,16 +13,16 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import org.apache.lucene.analysis.core.WhitespaceAnalyzer;
+import org.apache.lucene.analysis.standard.ClassicAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.Query;
-import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.TopDocs;
-import org.apache.lucene.search.similarities.ClassicSimilarity;
-import org.apache.lucene.search.similarities.TFIDFSimilarity;
+import org.apache.lucene.search.*;
+import org.apache.lucene.search.similarities.*;
 import org.apache.lucene.store.FSDirectory;
 
 /**
@@ -38,18 +38,23 @@ public class CranSearcher {
         if (args.length > 2) {
             FSDirectory fsdir = FSDirectory.open(new File(args[1]).toPath());
             IndexSearcher searcher = new IndexSearcher(DirectoryReader.open(fsdir));
-            // set classic cosine similarity, remove for BM25 similarity
-            //searcher.setSimilarity(new ClassicSimilarity());
             BufferedReader reader = new BufferedReader(new FileReader(args[0]));
             BufferedWriter writer = new BufferedWriter(new FileWriter(args[2]));
             Gson gson = new Gson();
-            QueryParser qp = new QueryParser("text", new StandardAnalyzer());
+            QueryParser qp = new QueryParser("text", new PersonalAnalyzer());
             int idq=1;
             while (reader.ready()) {
                 CranQuery query = gson.fromJson(reader.readLine(), CranQuery.class);
-                String t=query.getQuery().replace("?", "").replace("*", ""); // remove special chars
+                String t=query.getQuery().replace("?", "").replace("*", "").replace("-dash", "").replace("/", "").replace("(", "")
+                        .replace(")","").replace("theory", "theory^0.9").replace("hypersonic", "hypersonic^1.6").replace("airplane", "airplane^0.4")
+                        .replace("aircraft", "aircraft^0.6").replace("distribution","distribution^0.3").replace("problem", "problem^0.6").replace("heated", "heated^0.4").replace("speed", "speed^0.3")
+                        .replace("criterion","criterion^0.3").replace("develop", "develop^0.2").replace("aerodynamic", "aerodynamic^0.3").replace("behaviour","behaviour^0.2").replace("predict", "predict^0.2")
+                        .replace("papers", "papers^0.2").replace("wide","wide^0.4").replace("enthalpy", "enthalpy^0.2").replace("design","design^0.2").replace("thermodynamic","thermodynamic^0.2").replace("basic", "basic^0.2").replace("approximation","approximation^0.2")
+                        .replace("investigate","investigate^0.2").replace("require", "require^0.2").replace("field", "field^0.3").replace("unstiffened", "unstiffened^0.3").replace("stiffen", "stiffen^0.2").replace("applicable", "applicable^0.2").replace("strength","strength^0.2")
+                        .replace("shallow","shallow^0.3").replace("existing","existing^0.2").replace("deflection","deflection^0.2").replace("work", "work^0.3").replace("representative","representative^0.2").replace("absence", "absence^0.2").replace("theoretical","theoretical^0.2").replace("kinetic", "kinetic^0.2")
+                        .replace("data","data^0.2").replace("solve","solve^0.3").replace("elliptic", "elliptic^0.2").replace("equation","equation^0.2").replace("deformation", "deformation^0.2").replace("rarefaction", "rarefaction^0.3").replace("characteristic", "characteristic^0.2").replace("tail", "tail^0.2").replace("phenomena","phenomena^0.3").replace("vortex", "vortex^0.2"); // remove special chars
                 Query lq = qp.parse(t);
-                System.out.println(lq);
+                System.out.println(idq + " " + lq);
                 TopDocs topdocs = searcher.search(lq, 100);
                 int r = 1;
                 for (ScoreDoc sd : topdocs.scoreDocs) {

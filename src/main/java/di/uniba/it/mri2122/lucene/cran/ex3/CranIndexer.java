@@ -36,7 +36,7 @@ public class CranIndexer {
             FieldType ft = new FieldType(TextField.TYPE_NOT_STORED);
             ft.setStoreTermVectors(true);
             FSDirectory fsdir = FSDirectory.open(new File(args[1]).toPath());
-            IndexWriterConfig iwc = new IndexWriterConfig(new StandardAnalyzer());
+            IndexWriterConfig iwc = new IndexWriterConfig(new PersonalAnalyzer());
             iwc.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
             IndexWriter writer = new IndexWriter(fsdir, iwc);
             BufferedReader reader = new BufferedReader(new FileReader(args[0]));
