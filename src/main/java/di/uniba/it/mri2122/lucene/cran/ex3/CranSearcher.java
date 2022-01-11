@@ -45,14 +45,7 @@ public class CranSearcher {
             int idq=1;
             while (reader.ready()) {
                 CranQuery query = gson.fromJson(reader.readLine(), CranQuery.class);
-                String t=query.getQuery().replace("?", "").replace("*", "").replace("-dash", "").replace("/", "").replace("(", "")
-                        .replace(")","").replace("theory", "theory^0.9").replace("hypersonic", "hypersonic^1.6").replace("airplane", "airplane^0.4")
-                        .replace("aircraft", "aircraft^0.6").replace("distribution","distribution^0.3").replace("problem", "problem^0.6").replace("heated", "heated^0.4").replace("speed", "speed^0.3")
-                        .replace("criterion","criterion^0.3").replace("develop", "develop^0.2").replace("aerodynamic", "aerodynamic^0.3").replace("behaviour","behaviour^0.2").replace("predict", "predict^0.2")
-                        .replace("papers", "papers^0.2").replace("wide","wide^0.4").replace("enthalpy", "enthalpy^0.2").replace("design","design^0.2").replace("thermodynamic","thermodynamic^0.2").replace("basic", "basic^0.2").replace("approximation","approximation^0.2")
-                        .replace("investigate","investigate^0.2").replace("require", "require^0.2").replace("field", "field^0.3").replace("unstiffened", "unstiffened^0.3").replace("stiffen", "stiffen^0.2").replace("applicable", "applicable^0.2").replace("strength","strength^0.2")
-                        .replace("shallow","shallow^0.3").replace("existing","existing^0.2").replace("deflection","deflection^0.2").replace("work", "work^0.3").replace("representative","representative^0.2").replace("absence", "absence^0.2").replace("theoretical","theoretical^0.2").replace("kinetic", "kinetic^0.2")
-                        .replace("data","data^0.2").replace("solve","solve^0.3").replace("elliptic", "elliptic^0.2").replace("equation","equation^0.2").replace("deformation", "deformation^0.2").replace("rarefaction", "rarefaction^0.3").replace("characteristic", "characteristic^0.2").replace("tail", "tail^0.2").replace("phenomena","phenomena^0.3").replace("vortex", "vortex^0.2"); // remove special chars
+                String t=customQueryBoost(query);
                 Query lq = qp.parse(t);
                 System.out.println(idq + " " + lq);
                 TopDocs topdocs = searcher.search(lq, 100);
@@ -71,6 +64,19 @@ public class CranSearcher {
             reader.close();
             writer.close();
         }
+    }
+
+    private static String customQueryBoost(CranQuery query) {
+        return query.getQuery().replace("?", "").replace("*", "").replace("-dash", "").replace("/", "").replace("(", "")
+                .replace(")","").replace("theory", "theory^0.9").replace("hypersonic", "hypersonic^1.6").replace("airplane", "airplane^0.4")
+                .replace("aircraft", "aircraft^0.6").replace("distribution","distribution^0.3").replace("problem", "problem^0.6").replace("heated", "heated^0.4").replace("speed", "speed^0.3")
+                .replace("criterion","criterion^0.3").replace("develop", "develop^0.2").replace("aerodynamic", "aerodynamic^0.3").replace("behaviour","behaviour^0.2").replace("predict", "predict^0.2")
+                .replace("papers", "papers^0.2").replace("wide","wide^0.4").replace("enthalpy", "enthalpy^0.2").replace("design","design^0.2").replace("thermodynamic","thermodynamic^0.2").replace("basic", "basic^0.2").replace("approximation","approximation^0.2")
+                .replace("investigate","investigate^0.2").replace("require", "require^0.2").replace("field", "field^0.3").replace("unstiffened", "unstiffened^0.3").replace("stiffen", "stiffen^0.2").replace("applicable", "applicable^0.2").replace("strength","strength^0.2")
+                .replace("shallow","shallow^0.3").replace("existing","existing^0.2").replace("deflection","deflection^0.2").replace("work", "work^0.3").replace("representative","representative^0.2").replace("absence", "absence^0.2").replace("theoretical","theoretical^0.2").replace("kinetic", "kinetic^0.2")
+                .replace("data","data^0.2").replace("solve","solve^0.3").replace("elliptic", "elliptic^0.2").replace("equation","equation^0.2").replace("deformation", "deformation^0.2").replace("rarefaction", "rarefaction^0.3").replace("characteristic", "characteristic^0.2").replace("tail", "tail^0.2").replace("phenomena","phenomena^0.3").replace("vortex", "vortex^0.2")
+                .replace("small", "small^0.2").replace("oppose", "oppose^0.2").replace("nature", "nature^0.1").replace("discontinuity", "discontinuity^0.4").replace("single", "single^0.1"); // remove special chars
+
     }
 
 }
