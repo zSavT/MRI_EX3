@@ -75,7 +75,8 @@ public class CranSearcher {
                 .replace("investigate","investigate^0.2").replace("require", "require^0.2").replace("field", "field^0.3").replace("unstiffened", "unstiffened^0.3").replace("stiffen", "stiffen^0.2").replace("applicable", "applicable^0.2").replace("strength","strength^0.2")
                 .replace("shallow","shallow^0.3").replace("existing","existing^0.2").replace("deflection","deflection^0.2").replace("work", "work^0.3").replace("representative","representative^0.2").replace("absence", "absence^0.2").replace("theoretical","theoretical^0.2").replace("kinetic", "kinetic^0.2")
                 .replace("data","data^0.2").replace("solve","solve^0.3").replace("elliptic", "elliptic^0.2").replace("equation","equation^0.2").replace("deformation", "deformation^0.2").replace("rarefaction", "rarefaction^0.3").replace("characteristic", "characteristic^0.2").replace("tail", "tail^0.2").replace("phenomena","phenomena^0.3").replace("vortex", "vortex^0.2")
-                .replace("small", "small^0.2").replace("oppose", "oppose^0.2").replace("nature", "nature^0.1").replace("discontinuity", "discontinuity^0.4").replace("single", "single^0.1"); // remove special chars
+                .replace("small", "small^0.2").replace("oppose", "oppose^0.2").replace("nature", "nature^0.1").replace("discontinuity", "discontinuity^0.4").replace("single", "single^0.1").replace("fundamental", "fundamental^0.1").replace("times", "times^0.1").replace("classical", "classical^0.2").replace("collapse","collapse^0.3").replace("subject", "subject^0.2").replace("principle","principle^0.2")
+                .replace("guide", "guide^0.1").replace("obey", "obey^0.1").replace("input", "input^0.1").replace("exist", "exist^0.2").replace("integrate", "integrate^0.2"); // remove special chars
 
     }
 
