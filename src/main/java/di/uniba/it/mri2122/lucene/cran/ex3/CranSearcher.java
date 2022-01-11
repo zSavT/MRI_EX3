@@ -62,7 +62,7 @@ public class CranSearcher {
                 idq++;
             }
             reader.close();
-            writer.close();
+          writer.close();
         }
     }
 
