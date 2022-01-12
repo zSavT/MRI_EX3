@@ -96,7 +96,8 @@ public class CranSearcher {
                 .replace("hand", "hand^0.2").replace("assume", "assume^0.2").replace("simply", "simply^0.2")
                 .replace("normal", "normal^0.2").replace("planform", "planform^0.2").replace("variable", "variable^0.2")
                 .replace("minimize", "minimize^0.2").replace("provide", "provide^0.2").replace("insight", "insight^0.2")
-                .replace("response", "response^0.2").replace("variety", "variety^0.2");// remove special chars
+                .replace("response", "response^0.2").replace("variety", "variety^0.2").replace("utilize", "utilize^0.2").replace("forced", "forced^0.2").replace("closed", "closed^0.2").replace("matching", "matching^0.2").replace("component", "component^0.2").replace("stall", "stall^0.2").replace("linearise", "linearise^0.1").replace("permit", "permit^0.2").replace("force", "force^0.3")
+                .replace("agreement","agreement^0.2").replace("injection", "injection^0.2").replace("portion", "portion^0.1").replace("relationship","relationship^0.1").replace("degree", "degree^0.1").replace("corner", "corner^0.2");// remove special chars and add term boost
 
     }
 
