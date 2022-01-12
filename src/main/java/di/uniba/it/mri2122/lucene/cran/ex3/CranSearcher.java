@@ -89,7 +89,14 @@ public class CranSearcher {
                 .replace("core", "core^0.2").replace("rational", "rational^0.2").replace("swept", "swept^0.7")
                 .replace("beam", "beam^0.2").replace("inelastic", "inelastic^0.2").replace("reduce", "reduce^0.2").replace("associate","associate^0.1").replace("couette", "couette^0.2")
                 .replace("relate","relate^0.2").replace("strong", "strong^0.2").replace("performance", "performance^0.2").replace("current", "current^0.2").replace("term", "term^0.2").replace("concept","concept^0.2").replace("adjacent", "adjacent^0.1").replace("blade", "blade^0.1").replace("sectional", "sectional^0.1").replace("systematic", "systematic^0.2")
-                .replace("acoustic", "acoustic^0.2").replace("propagation", "propagation^0.1").replace("wall", "wall^0.4").replace("insulate", "insulate^0.1").replace("attachment", "attachment^0.2").replace("numerical", "numerical^0.2").replace("suitable", "suitable^0.2").replace("partially", "partially^0.2");// remove special chars
+                .replace("acoustic", "acoustic^0.2").replace("propagation", "propagation^0.1").replace("wall", "wall^0.4").replace("insulate", "insulate^0.1").replace("attachment", "attachment^0.2").replace("numerical", "numerical^0.2").replace("suitable", "suitable^0.2").replace("partially", "partially^0.2")
+                .replace("vary", "vary^0.2").replace("maximum", "maximum^0.2").replace("obtainable", "obtainable^0.2")
+                .replace("estimate", "estimate^0.2").replace("comparison", "comparison^0.2")
+                .replace("reference", "reference^0.2").replace("integral", "integral^0.2").replace("launch", "launch^0.2")
+                .replace("hand", "hand^0.2").replace("assume", "assume^0.2").replace("simply", "simply^0.2")
+                .replace("normal", "normal^0.2").replace("planform", "planform^0.2").replace("variable", "variable^0.2")
+                .replace("minimize", "minimize^0.2").replace("provide", "provide^0.2").replace("insight", "insight^0.2")
+                .replace("response", "response^0.2").replace("variety", "variety^0.2");// remove special chars
 
     }
 
