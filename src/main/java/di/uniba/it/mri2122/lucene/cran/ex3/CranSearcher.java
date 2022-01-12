@@ -87,7 +87,9 @@ public class CranSearcher {
                 .replace("result", "result^0.2").replace("establish", "establish^0.2").replace("accurate", "accurate^0.3")
                 .replace("progress", "progress^0.2").replace("freedom", "freedom^0.2").replace("analyse", "analyse^0.2")
                 .replace("core", "core^0.2").replace("rational", "rational^0.2").replace("swept", "swept^0.7")
-                .replace("beam", "beam^0.2").replace("inelastic", "inelastic^0.2").replace("reduce", "reduce^0.2");// remove special chars
+                .replace("beam", "beam^0.2").replace("inelastic", "inelastic^0.2").replace("reduce", "reduce^0.2").replace("associate","associate^0.1").replace("couette", "couette^0.2")
+                .replace("relate","relate^0.2").replace("strong", "strong^0.2").replace("performance", "performance^0.2").replace("current", "current^0.2").replace("term", "term^0.2").replace("concept","concept^0.2").replace("adjacent", "adjacent^0.1").replace("blade", "blade^0.1").replace("sectional", "sectional^0.1").replace("systematic", "systematic^0.2")
+                .replace("acoustic", "acoustic^0.2").replace("propagation", "propagation^0.1").replace("wall", "wall^0.4").replace("insulate", "insulate^0.1").replace("attachment", "attachment^0.2").replace("numerical", "numerical^0.2").replace("suitable", "suitable^0.2").replace("partially", "partially^0.2");// remove special chars
 
     }
 
