@@ -10,7 +10,7 @@ E' stata creata la classe _Personal Analyzer_ , ereditando da "_StopwordAnalyzer
 
 Per la gestione delle _query_ nella classe __CranSearcher__ viene utilizzato il _PersonalAnalyzer_. Inoltre è stato aggiunto il metodo "_customQueryBoost_" per effettuare i boost dei termini rilevanti e l'eliminazione  dei caratteri non desiderati.
 <p>
-
+L'output del sistema si trova in "MRI_EX3\resources\cran", chiamato "result.out". 
 Il risultato di "trec_eval" è il seguente:
 ```
 runid                 	all	exp0
