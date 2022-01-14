@@ -12,6 +12,7 @@ Per la gestione delle _query_ nella classe __CranSearcher__ viene utilizzato il 
 <p>
 L'output del sistema si trova in "MRI_EX3\resources\cran", chiamato "result.out". 
 Il risultato di "trec_eval" è il seguente:
+  
 ```
 runid                 	all	exp0
 num_q                 	all	225
@@ -44,6 +45,7 @@ P_200                 	all	0.0299
 P_500                 	all	0.0120
 P_1000                	all	0.0060
 ```
+  
 ---
 Natasha Fabrizio - Francesco Saverio Cassano<br>
 Esercizio 3 MRI 
