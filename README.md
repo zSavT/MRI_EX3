@@ -8,7 +8,9 @@ L'esercizio è stato realizzato prendendo come base ciò che è presente nella r
 E' stata creata la classe _Personal Analyzer_ , ereditando da "_StopwordAnalyzerBase_", che Tokenizza i termini e poi li filtra. Come __Tokenizzatore__, la classe utilizza il _LetterTokenizer_, mentre per quanto riguarda i __filtri__ utilizza _LowerCaseFilter_, _EnglishPossessiveFilter_, _RemoveDuplicateTokenFilter_, _KStemFilter_ ed infine _StopFilter_; quest'ultimo legge la lista delle stopword da file. 
 <p>
 
-Per la gestione delle _query_ nella classe __CranSearcher__ viene utilizzato il _PersonalAnalyzer_. Inoltre è stato aggiunto il metodo "_customQueryBoost_" per effettuare i boost dei termini rilevanti e l'eliminazione  dei caratteri non desiderati.
+Per la gestione delle _query_ nella classe __CranSearcher__ viene utilizzato il _PersonalAnalyzer_. Inoltre è stato aggiunto il metodo "_customQueryBoost_" per effettuare i boost dei termini rilevanti e l'eliminazione  dei caratteri non desiderati. <br>
+  
+Anche la classe __CranIndexer__ utilizza come analyzer il __PersonalAnalyzer__.
 <p>
 L'output del sistema si trova nel percorso "MRI_EX3\resources\cran", il file è chiamato "result.out". 
 Il risultato di "trec_eval" è il seguente:
